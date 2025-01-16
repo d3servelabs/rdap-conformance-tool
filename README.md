@@ -145,3 +145,33 @@ To publish, a release:
 
 This RDAP conformance tool has been developed by Viagénie
 (Julien Bernard, Guillaume Blanchet, Marc Blanchet, Pierre Larochelle) under a contract from ICANN.
+
+## Namefi Additonal Notes
+
+Build docker image
+
+```sh
+docker build -t rdapct .
+```
+
+Push to docker hub
+
+```sh
+docker push xinbenlv/rdapct
+```
+
+Tag docker image
+
+```
+docker tag xinbenlv/rdapct:latest xinbenlv/rdapct:1.0.7-patch-1
+```
+
+Pull from docker hub
+```
+docker pull xinbenlv/rdapct
+```
+
+run docker image
+```
+docker run --network host -v $(pwd)/config:/app/config --entrypoint java rdapct -jar /app/tool/target/rdapct-1.0.7.jar -c /app/config/config.json --gtld-registry https://rdap.namefi.io/api/rdap/domain/example.com -
+```
