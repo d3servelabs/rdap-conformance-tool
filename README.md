@@ -174,5 +174,5 @@ docker pull xinbenlv/rdapct
 Run the test with verbose output using docker.
 
 ```sh
-docker run --network host -v $(pwd)/config:/app/config --entrypoint java xinbenlv/rdapct:1.0.7-patch-1 -jar /app/tool/target/rdapct-1.0.7.jar -c /app/config/config.json --gtld-registry https://rdap.namefi.io/api/rdap/domain/example.com -v
+docker run --network host -v $(pwd)/config:/app/config --entrypoint java xinbenlv/rdapct:latest -jar /app/tool/target/rdapct-1.0.7.jar -c /app/config/config.json --gtld-registry https://rdap.namefi.io/api/rdap/domain/example.com -v
 ```
